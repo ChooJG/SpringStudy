@@ -1,5 +1,6 @@
 package com.study.springRefactor.order;
 
+import com.study.springRefactor.AppConfig;
 import com.study.springRefactor.member.Grade;
 import com.study.springRefactor.member.Member;
 import com.study.springRefactor.member.MemberService;
@@ -9,8 +10,10 @@ import org.junit.jupiter.api.Test;
 
 public class OrderServiceTest {
 
-    MemberService memberService = new MemberServiceImpl();
-    OrderService orderService = new OrderServiceImpl();
+    AppConfig appConfig = new AppConfig();
+
+    MemberService memberService = appConfig.memberService();
+    OrderService orderService = appConfig.orderService();
 
     @Test
     void createOrder(){
